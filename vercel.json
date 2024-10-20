@@ -1,9 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/src/:asset*",
-      "destination": "https://nightly-dapp.vercel.app/:asset*"
-    },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
