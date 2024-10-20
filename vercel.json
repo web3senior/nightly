@@ -1,4 +1,9 @@
 {
-  { "source": "/src/:asset*", "destination": "https://nightly-dapp.vercel.app/:asset*" },
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    {
+      "source": "/src/:asset*",
+      "destination": "https://nightly-dapp.vercel.app/:asset*"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
