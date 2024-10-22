@@ -1,0 +1,30 @@
+// Loading
+.loading {
+  background-color: var(--white);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  isolation: isolate;
+
+  figure {
+    &:first-child {
+      width: 15vw;
+      max-width: 8rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      width: 20vw;
+      max-width: 2rem;
+      position: absolute;
+      bottom: 2rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
