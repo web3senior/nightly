@@ -43,7 +43,7 @@ export default function Owned({ title }) {
         </Link>
 
         {data && data.event && data.event.length > 0 && (
-          <div className={`${styles['datalist']} grid grid--fit`} style={{ '--data-width': `400px`, gap: `1rem` }}>
+          <div className={`${styles['datalist']} grid grid--fit`} style={{ '--data-width': `450px`, gap: `1rem` }}>
             {data.event.map((item, i) => {
               console.log(item)
               return (
