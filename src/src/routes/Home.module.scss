@@ -183,6 +183,7 @@
 
 
 .user {
+  
   ul {
     height: 100%;
 
@@ -200,24 +201,17 @@
     column-gap: 1rem;
     
 
-    padding: 0 0  0.4rem 1rem;
+    padding: 0 0  0.6rem 1rem;
 
     li {
+      height: 100%;
+      padding: .2rem;
       scroll-snap-align: start;
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
+      flex: none;
+      width: 68%;
+      cursor: pointer;
       -webkit-user-select: none;
       user-select: none;
-      text-align: center;
-      flex: none;
-      width: 48%;
-      background: #fff;
-      border: 1px solid #e7ebf4;
-      border-radius: var(--global-border-radius);
-      transition: background 0.2s;
-      overflow: hidden;
-      cursor: pointer;
       transition: all ease-in-out 0.1s;
 
       &:active {
@@ -227,9 +221,13 @@
       }
 
       figure {
+        background-color: #f3f3f3;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
         img {
-          width: 100%;
-          height: auto;
+          width: auto;
+          height: 300px;
         }
       }
 
