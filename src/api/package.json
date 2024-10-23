@@ -1,0 +1,37 @@
+{
+  "name": "falcon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "dev": "npx webpack --config config.development.js",
+    "prod": "npx webpack --config config.production.js",
+    "clean": "rm dist/bundle.js",
+    "sass:panel": "sass -w public/scss/global.scss:dist/panel.min.css",
+    "sass:admin": "sass -w public/scss/admin.scss:dist/admin.min.css",
+    "sass:offline": "sass -w --style compressed offline.scss:src/offline.min.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3senior/falcon.git"
+  },
+  "author": "Amir Rahimi <web3senior@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web3senior/falcon/issues"
+  },
+  "homepage": "https://github.com/web3senior/falcon#readme",
+  "dependencies": {
+    "office-ui-fabric-core": "^11.1.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "sass": "^1.70.0",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.9.0"
+  }
+}

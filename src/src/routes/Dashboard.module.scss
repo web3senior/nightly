@@ -1,0 +1,45 @@
+.section {
+  .alert {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    p {
+      text-wrap: balance;
+      line-height: 1.2rem;
+    }
+  }
+
+  p {
+    margin: 0 0 0.8rem 0;
+    color: #21212e;
+    line-height: 1.7rem;
+  }
+}
+
+.point-card {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 4px;
+  margin-top: .5rem;
+  background-color: var(--white);
+  filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+
+  &:hover {
+    background-color: #fafafa;
+  }
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-color: #EAEAFF;
+  color: #827DFF;
+}

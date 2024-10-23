@@ -1,5 +1,5 @@
 {
-  "name": "nightly",
+  "name": "src",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "office-ui-fabric-core": "^11.1.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.27.0",
+    "web3": "^4.14.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
@@ -23,6 +28,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
+    "sass-embedded": "^1.80.3",
     "vite": "^5.4.8"
   }
 }

@@ -1,0 +1,81 @@
+:root {
+  font-family: 'GeistVF', var(--ff-segoe);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  // color: rgba(255, 255, 255, 0.87);
+  // background: #323232;
+  color: #fff;
+  background: var(--global-background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  *overflow-y: scroll;
+  background: var(--global-background-color);
+  -webkit-tap-highlight-color: transparent;
+  cursor: url('./assets/owl.cur'), auto;
+  user-select: none;
+
+  ::selection {
+    color: var(--white);
+    background-color: var(--color-primary);
+  }
+}
+
+html,
+body,
+#root {
+  max-height: 100dvh;
+  // max-height: 100vh;
+}
+
+#root {
+  min-height: inherit;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: var(--global-border-radius);
+  border: none;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  -webkit-tap-highlight-color: transparent;
+  &:active {
+    outline: none;
+  }
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #fff;
+    background: var(--global-background-color);
+  }
+}

@@ -1,0 +1,158 @@
+@import './../styles/components/responsive';
+
+.section {
+  height: 100%;
+  padding: 0 16px;
+  background-color: var(--global-background-color);
+  isolation: isolate;
+
+  &__container {
+    height: 100%;
+    overflow: hidden;
+    gap: 0;
+
+  }
+
+  span.coin {
+    width: 14px;
+    height: 14px;
+    background: #c6d4da;
+    border: 0.5px solid #a4b5bd;
+    box-shadow: 0px 0px 0px 1px #afc2c9;
+    border-radius: 999px;
+  }
+
+  figure {
+    img {
+      width: 35vw;
+    }
+  }
+}
+
+.tapContainer {
+  position: relative;
+  background-color: #0f0f0f;
+  padding: 1.5rem 1rem 0 1rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -2rem;
+    height: 70vh;
+    width: 100%;
+    background-image: url('./../assets/web.svg');
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+.tour {
+  margin-top: 1rem;
+  width: 90%;
+  padding: .4rem 1rem;
+  background: var(--color-primary);
+  border-radius: var(--global-border-radius);
+  
+  figure {
+    column-gap: 1rem;
+
+    figcaption {
+      font-weight: 600;
+      font-size: 1.2em;
+      line-height: 1.2rem;
+    }
+
+    img {
+    height: 48px;
+    width: auto;
+    }
+  }
+
+  button {
+    height: 36px;
+    width: 95px;
+    font-weight: 700;
+  }
+}
+
+.point {
+  li {
+    column-gap: 0.5rem;
+
+    span {
+      font-weight: 900;
+      font-size: 3rem;
+      leading-trim: both;
+      text-edge: cap;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.energy {
+  width: 100%;
+  progress {
+    width: 70%;
+    border-radius: 999px;
+    width: 80%;
+    height: 0.7rem;
+    &::-webkit-progress-bar {
+      background-color: #1e1e1e;
+      border-radius: 999px;
+    }
+    &::-webkit-progress-value {
+      background-color: var(--white);
+      border-radius: 999px;
+    }
+  }
+}
+
+.tap {
+  position: relative;
+  z-index: 999px;
+  cursor: url('./assets/bloody-knife.cur'), pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:active {
+    transform: scale(0.95) rotate(-4deg);
+  }
+}
+
+.drop {
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 0 100% 100% 100%;
+  background-color: red;
+  position: absolute;
+  animation: drop 3s infinite both;
+
+  &:nth-child(1) {
+    left: 0%;
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0) scaleX(0.85) rotate(45deg);
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translateY(120%) scaleX(0.85) rotate(45deg);
+    animation-timing-function: ease-in;
+    width: 0.8em;
+    height: 0.8em;
+  }
+  80%,
+  100% {
+    transform: translateY(60vh) scaleX(0.85) rotate(45deg);
+    width: 1em;
+    height: 1em;
+  }
+}

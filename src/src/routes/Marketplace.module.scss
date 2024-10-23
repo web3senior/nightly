@@ -1,0 +1,12 @@
+@import './../styles/components/responsive';
+
+.section {
+  min-height: calc(100dvh - 90px);
+
+  figure {
+    height: 200px;
+    img {
+      width: auto;
+    }
+  }
+}

@@ -4,8 +4,6 @@ import { getTour } from '../util/api'
 import { Title } from './helper/DocumentTitle'
 import Shimmer from './helper/Shimmer'
 import Icon from './helper/MaterialIcon'
-import NextIcon from './../assets/next-icon.svg'
-import DoneIcon from './../assets/done-icon.svg'
 import styles from './Tour.module.scss'
 
 export const loader = async () => {
@@ -24,7 +22,7 @@ function Tour({ title }) {
   const chkSliderEnd = (tourIndex) => {
     if (tourIndex === loaderData.tour.length) {
       localStorage.setItem('tour', true)
-      navigate('/')
+      navigate('/connect')
       return false
     }
   }
@@ -49,7 +47,7 @@ function Tour({ title }) {
   }
 
   useEffect(() => {
-    if (JSON.parse(loaderData.isTourSeen)) navigate('/')
+    if (JSON.parse(loaderData.isTourSeen)) navigate('/connect')
   }, [])
 
   return (
