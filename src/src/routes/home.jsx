@@ -24,6 +24,7 @@ function Home({ title }) {
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState({ project: [] })
   const [user, setUser] = useState({ data: [] })
+  const [category, setCategory] = useState([])
   const [color, setColor] = useState(``)
   const [tapCounter, setTapCounter] = useState(0)
   const [description, setDescription] = useState(``)
@@ -96,6 +97,11 @@ function Home({ title }) {
       setUser({ data: res })
     })
 
+    getCategory().then((res) => {
+      console.log(res)
+      setCategory(res)
+    })
+
     // Generate unique ID for the current device
     localStorage.setItem(`UUID`, crypto.randomUUID())
     setTimeout(() => {
@@ -150,7 +156,7 @@ function Home({ title }) {
                             </div>
                           </div>
 
-                          <button onClick={()=>toast(`Coming soon`)}>Follow</button>
+                          <button onClick={() => toast(`Coming soon`)}>Follow</button>
                         </div>
                       </div>
                     </li>
@@ -173,12 +179,19 @@ function Home({ title }) {
                 return (
                   <div key={i} className={`card w-100 mt-10`}>
                     <div className={`card__body d-flex flex-row align-items-center justify-content-between`} style={{ columnGap: `1rem` }}>
-                      <div className={`d-flex flex-column`}>
-                        <b>{item.title}</b>
-                        <small className={``} style={{ color: `var(--black-100)` }}>
+                      <ul className={`d-flex flex-column`}>
+                        <li>
+                          <b>{item.title}</b>
+                        </li>
+                        <li className={``} style={{ color: `var(--black-100)` }}>
                           {item.lead}
-                        </small>
-                      </div>
+                        </li>
+                        {category && category.length > 0 && (
+                          <li>
+                            <span className={`badge badge-pill badge-warning`}>{category.filter((filteredItem, i) => filteredItem.id === item.category_id)[0].name}</span>
+                          </li>
+                        )}
+                      </ul>
 
                       <Link to={`/project/${item.id}`}>View</Link>
                     </div>

@@ -71,11 +71,11 @@ export default function Owned({ title }) {
         )}
 
         {data && data.project && data.project.length > 0 && (
-          <div className={`${styles['list']} d-flex flex-column align-items-center justify-content-between`}>
+          <div className={`${styles['datalist']}`}>
             {data.project.map((item, i) => {
               return (
-                <div key={i} className={`card w-100 mt-10`}>
-                  <div className={`card__body d-flex flex-row align-items-center justify-content-between`} style={{ columnGap: `1rem` }}>
+                <div key={i} className={`card mt-10`}>
+                  <div className={`card__body d-flex flex-row align-items-center justify-content-between`}>
                     <ul className={`d-flex flex-column`}>
                       <li>
                         <b>{item.title}</b>

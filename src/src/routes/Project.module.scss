@@ -1,7 +1,7 @@
 @import './../styles/components/responsive';
 
 .section {
-  height: 100dvh;
+  min-height: 100dvh;
   padding: 2rem 16px;
   background-color: var(--global-background-color);
   overflow: hidden;
@@ -35,7 +35,7 @@
   }
 }
 
-.list {
+.datalist {
   figure {
     img {
       width: 64px;
