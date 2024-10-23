@@ -5,6 +5,7 @@ import { getCategory, getProject } from '../util/api'
 import { Title } from './helper/DocumentTitle'
 import Icon from './helper/MaterialIcon'
 import Logo from './../../src/assets/logo.svg'
+import GitHubIcon from './../../src/assets/icon-github.svg'
 import Web3 from 'web3'
 import toast from 'react-hot-toast'
 import styles from './ProjectDetail.module.scss'
@@ -35,13 +36,9 @@ export default function Owned({ title }) {
     setData({ project: newData })
   }
 
-  const handleLike = () => {
+  const handleLike = () => {}
 
-  }
-
-  const handleSave = () => {
-    
-  }
+  const handleSave = () => {}
 
   useEffect(() => {
     getProject(params.id).then((res) => {
@@ -83,6 +80,21 @@ export default function Owned({ title }) {
                 </div>
               </div>
             </div>
+
+            {data.project[0].repo && (
+              <>
+                <div className={`card ${styles['repo']} mt-10`}>
+                  <div className={`card__body animate fade`}>
+                    <div className={`d-flex flex-row align-items-center justify-content-start`}>
+                      <img src={GitHubIcon} />
+                      <a href={`${data.project[0].repo}`} target={`_blank`}>
+                        <span className={`badge badge-dark badge-pill ml-10`}>{data.project[0].repo}</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </>
         )}
       </div>
