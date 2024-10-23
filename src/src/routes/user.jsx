@@ -31,7 +31,7 @@ export default function User({ title }) {
 
   const handleFilter = (categoryItem) => {
     const newData = backupData.project.filter((item) => categoryItem.id === item.category_id)
- setData({ project: newData })
+    setData({ project: newData })
   }
 
   useEffect(() => {
@@ -40,8 +40,6 @@ export default function User({ title }) {
       setData({ user: res })
       setBackupData({ user: res })
     })
-
-
   }, [])
 
   return (
@@ -58,13 +56,15 @@ export default function User({ title }) {
               return (
                 <div key={i} className={`card w-100 mt-10`}>
                   <div className={`card__body d-flex flex-row align-items-center justify-content-between`} style={{ columnGap: `1rem` }}>
-                   
-                   <div className={`d-flex flex-column`}>
-                   <b>{item.title}</b>
-                    <small className={``} style={{ color: `var(--black-100)` }}>
-                      {item.lead}
-                    </small>
-                   </div>
+                    <div className={`d-flex flex-column`}>
+                      <figure className={`d-flex`}>
+                        <img className={`rounded`} alt={`User-${item.fullname}`} src={`${import.meta.env.VITE_UPLOAD_URL}${item.pfp}`} />
+                      </figure>
+                      <b>{item.fullname}</b>
+                      <small className={``} style={{ color: `var(--black-100)` }}>
+                        {item.bio}
+                      </small>
+                    </div>
 
                     <Link to={`/user/${item.id}`}>View</Link>
                   </div>
