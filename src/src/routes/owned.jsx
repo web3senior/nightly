@@ -120,7 +120,7 @@ export default function Owned({ title }) {
         ) : (
           <div className={`card`}>
             <div className={`card__body d-f-c flex-column`}>
-              You don't have any Masterpix tokens.
+              Oops!
               <Link to={`/`}> Mint now!</Link>
             </div>
           </div>

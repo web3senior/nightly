@@ -52,7 +52,7 @@ export default function About({ title }) {
           <div className={`card`}>
             <div className={`card__body d-flex align-items-center justify-content-between`}>
               <div>
-                <span>Total supply</span>
+                <span>My Projects</span>
                 <h1>{totalSupply}</h1>
               </div>
               <div className={`${styles['card-icon']}`}>
@@ -63,7 +63,7 @@ export default function About({ title }) {
           <div className={`card`}>
             <div className={`card__body d-flex align-items-center justify-content-between`}>
               <div>
-                <span>Maximum supply per mint</span>
+                <span>Profile view</span>
                 <h1>{10}</h1>
               </div>
               <div className={`${styles['card-icon']}`}>
@@ -76,13 +76,13 @@ export default function About({ title }) {
         <div className={`grid grid--fit mt-50`} style={{ '--data-width': '300px', gap: '1rem' }}>
           <div className={`card`}>
             <div className={`card__body`}>
-              <p>Mint Fee</p>
+              <p>Donation</p>
               <h2>{mintFee}</h2>
             </div>
           </div>
           <div className={`card`}>
             <div className={`card__body`}>
-              <p>Update Fee</p>
+              <p>Teams</p>
               <h2>{updateFee}</h2>
             </div>
           </div>
