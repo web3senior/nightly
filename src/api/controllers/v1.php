@@ -116,6 +116,20 @@ class V1 extends Controller
         }
     }
 
+    function userProject()
+    {
+        $table = ['project', 'id'];
+        $this->request_method('GET');
+        $data = $this->model->userProject($table);
+        if (!empty($data) && is_array($data)) {
+            (new Httpresponse)->set(200);
+            echo json_encode($data);
+        } else {
+            $this->_error = "Not found any record!";
+            $this->Error();
+        }
+    }
+
         
     function user()
     {

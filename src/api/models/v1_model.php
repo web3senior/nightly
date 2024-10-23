@@ -32,6 +32,12 @@ class V1_Model extends Model
         return $this->db->select("SELECT * FROM `project` order by id asc");
     }
 
+    function userProject($table)
+    {
+     return $this->db->select(" SELECT t1.* FROM `project` t1 WHERE t1.user_id = :id", [':id' => $_GET['id']]);
+      
+    }
+
     function user($table)
     {
         if (isset($_GET['id'])) return $this->db->select(" SELECT t1.* FROM `user` t1 WHERE t1.id = :id", [':id' => $_GET['id']]);

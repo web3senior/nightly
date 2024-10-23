@@ -22,6 +22,17 @@
     color: var(--white);
     border: none;
   }
+
+  a {
+    position: relative;
+    color: #5f6368;
+    background-color: var(--global-background-color);
+    width: 60px;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--global-border-radius);
+    text-align: center;
+    font-weight: bold;
+  }
 }
 
 .list {

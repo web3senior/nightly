@@ -46,6 +46,17 @@ export async function getUser(id) {
   return response.json()
 }
 
+export async function getUserProject(id) {
+  let requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+  }
+
+  const response = await fetch(`${import.meta.env.VITE_API_URL}userProject${id !== undefined ? `?id=${id}`:''}`, requestOptions)
+  if (!response.ok) throw new Response('Failed to get data', { status: 500 })
+  return response.json()
+}
+
 
 export async function getCategory() {
   let requestOptions = {
