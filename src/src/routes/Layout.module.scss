@@ -1,17 +1,17 @@
 @import './../styles/components/responsive';
 
 .header {
+  position: sticky;
+  top: 0;
   grid-row-start: 1;
   grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
   background-color: var(--black);
   color: var(--white);
   width: 100%;
   z-index: 1;
 
   &__container {
-    padding: .5rem 0.25rem;
+    padding: 0.5rem 0.25rem;
 
     span.name {
       font-size: 1.25rem;
@@ -114,9 +114,9 @@
       &:hover {
         background: #f7f8fa;
       }
-span {
-  color: var(--black)
-}
+      span {
+        color: var(--black);
+      }
       img {
         width: 24px;
         height: 24px;
@@ -132,23 +132,19 @@ span {
 .main {
   grid-row-start: 2;
   grid-row-end: 3;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  overflow-y: auto;
+  //overflow-y: auto;
+  padding-bottom: 4rem;
 }
 
 footer {
-  grid-row-start: 3;
-  grid-row-end: 4;
-  grid-column-start: 1;
-  grid-column-end: 2;
   padding: 1rem 0;
   color: #a6a6a6;
-  // position: fixed;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-  // background-color: #2e2e2e;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: var(--global-background-color);
+
   ul {
     li {
       a {
@@ -156,6 +152,7 @@ footer {
         flex-flow: column nowrap;
         align-items: center;
         justify-content: center;
+
         svg {
           width: 2.2rem;
         }
@@ -167,6 +164,7 @@ footer {
     fill: #a6a6a6;
   }
 }
+
 .active {
   svg {
     fill: var(--black) !important;

@@ -26,7 +26,17 @@ class V1_Model extends Model
                 die("O is unknown!");
         }
     }
+    function project($table)
+    {
+        if (isset($_GET['id'])) return $this->db->select(" SELECT t1.* FROM `project` t1 WHERE t1.id = :id", [':id' => $_GET['id']]);
+        return $this->db->select("SELECT * FROM `project` order by id desc");
+    }
 
+    function user($table)
+    {
+        if (isset($_GET['id'])) return $this->db->select(" SELECT t1.* FROM `user` t1 WHERE t1.id = :id", [':id' => $_GET['id']]);
+        return $this->db->select("SELECT * FROM `user` order by id desc");
+    }
 
     function point($table)
     {
@@ -59,10 +69,6 @@ class V1_Model extends Model
         }
     }
 
-  function tap($table, $wallet_address)
-    {
-        return $this->db->select("$table[0]", $data, "`wallet_address`='{$wallet_address}'");
-    }
 
     function employee($table)
     {

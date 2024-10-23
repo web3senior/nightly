@@ -17,6 +17,7 @@ import About from './routes/about.jsx'
 import Leaderboard from './routes/leaderboard.jsx'
 import Event from './routes/event.jsx'
 import Project from './routes/project.jsx'
+import ProjectDetail from './routes/project-detail.jsx'
 import Ecosystem from './routes/ecosystem.jsx'
 // import Admin from './routes/admin.jsx'
 import Fee from './routes/fee.jsx'
@@ -68,7 +69,16 @@ const router = createBrowserRouter([
       },
       {
         path: `project`,
-        element: <Project title={`Project`} />,
+        children: [
+          {
+            index: true,
+            element: <Project title={`Project`} />,
+          },
+          {
+            path: `:id`,
+            element: <ProjectDetail />
+          }
+        ]
       },
       {
         path: `about`,

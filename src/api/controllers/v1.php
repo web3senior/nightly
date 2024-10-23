@@ -106,7 +106,22 @@ class V1 extends Controller
     {
         $table = ['project', 'id'];
         $this->request_method('GET');
-        $data = $this->model->command('fetch', $table);
+        $data = $this->model->project($table);
+        if (!empty($data) && is_array($data)) {
+            (new Httpresponse)->set(200);
+            echo json_encode($data);
+        } else {
+            $this->_error = "Not found any record!";
+            $this->Error();
+        }
+    }
+
+        
+    function user()
+    {
+        $table = ['user', 'id'];
+        $this->request_method('GET');
+        $data = $this->model->user($table);
         if (!empty($data) && is_array($data)) {
             (new Httpresponse)->set(200);
             echo json_encode($data);

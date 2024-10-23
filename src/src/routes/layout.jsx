@@ -146,7 +146,7 @@ export default function Root() {
                       >
                         <figure className={`d-flex flex-row align-items-center justify-content-start`} style={{ columnGap: `.5rem` }}>
                           <img alt={`${item.name}`} src={item.logo} />
-                          <figcaption>{item.name}</figcaption>
+                          <figcaption style={{color:'black'}}>{item.name}</figcaption>
                           {item.name === auth.defaultChain && <Icon name={`check`} style={{ marginLeft: `auto` }} />}
                         </figure>
                       </li>

@@ -13,6 +13,13 @@
 
   }
 
+  button {
+    background-color: var(--color-primary);
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    color: var(--white);
+  }
+
   span.coin {
     width: 14px;
     height: 14px;
@@ -78,6 +85,15 @@
     width: 95px;
     font-weight: 700;
   }
+}
+
+
+.slogan {
+
+}
+
+.hero {
+  font-size: 2rem;
 }
 
 .point {
@@ -154,5 +170,73 @@
     transform: translateY(60vh) scaleX(0.85) rotate(45deg);
     width: 1em;
     height: 1em;
+  }
+}
+
+.list {
+  figure {
+    img {
+      width: 64px;
+    }
+  }
+}
+
+
+.user {
+  ul {
+    height: 100%;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    flex: none;
+
+    width: 100%;
+    overflow-x: scroll;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    
+
+    padding: 0 0  0.4rem 1rem;
+
+    li {
+      scroll-snap-align: start;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      -webkit-user-select: none;
+      user-select: none;
+      text-align: center;
+      flex: none;
+      width: 48%;
+      background: #fff;
+      border: 1px solid #e7ebf4;
+      border-radius: var(--global-border-radius);
+      transition: background 0.2s;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all ease-in-out 0.1s;
+
+      &:active {
+        outline: none;
+        transform: scale(0.94);
+        outline: none;
+      }
+
+      figure {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }

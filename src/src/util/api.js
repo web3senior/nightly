@@ -24,13 +24,24 @@ export async function getEvent() {
   return response.json()
 }
 
-export async function getProject() {
+export async function getProject(id) {
   let requestOptions = {
     method: 'GET',
     redirect: 'follow',
   }
 
-  const response = await fetch(`${import.meta.env.VITE_API_URL}project`, requestOptions)
+  const response = await fetch(`${import.meta.env.VITE_API_URL}project${id !== undefined ? `?id=${id}`:''}`, requestOptions)
+  if (!response.ok) throw new Response('Failed to get data', { status: 500 })
+  return response.json()
+}
+
+export async function getUser(id) {
+  let requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+  }
+
+  const response = await fetch(`${import.meta.env.VITE_API_URL}user${id !== undefined ? `?id=${id}`:''}`, requestOptions)
   if (!response.ok) throw new Response('Failed to get data', { status: 500 })
   return response.json()
 }

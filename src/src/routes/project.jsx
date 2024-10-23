@@ -56,8 +56,9 @@ export default function Owned({ title }) {
         </Link>
 
         {category && category.length > 0 && (
-          <ul className={`${styles['category']} d-flex flex-row align-items-start justify-content-start`}>
-            {category.map((item, i) => {
+          <div className={`${styles['category']} d-flex flex-row align-items-start justify-content-start`}>
+           <ul>
+           {category.map((item, i) => {
               return (
                 <li key={i} className={`d-f-c`} onClick={() => handleFilter(item)}>
                   <div dangerouslySetInnerHTML={{ __html: item.icon }} />
@@ -65,7 +66,8 @@ export default function Owned({ title }) {
                 </li>
               )
             })}
-          </ul>
+           </ul>
+          </div>
         )}
 
         {data && data.project && data.project.length > 0 && (
