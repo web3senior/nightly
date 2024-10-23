@@ -73,7 +73,7 @@ function Home({ title }) {
 
         <ul className={`d-flex flex-column`} style={{ rowGap: `.5rem` }}>
           <li>
-            <Link to={`/expert`}>
+            <Link to={`/user`}>
               <div className={`card`}>
                 <div className={`card__body d-flex`} style={{ columnGap: `.5rem` }}>
                   <Icon name={`person`} />

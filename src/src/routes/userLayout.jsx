@@ -11,10 +11,7 @@ import ArbitrumLogo from './../../src/assets/arbitrum-logo.svg'
 import LuksoLogo from './../../src/assets/lukso.svg'
 import MenuIcon from './../../src/assets/menu-icon.svg'
 import Icon from './helper/MaterialIcon'
-import party from 'party-js'
 import styles from './UserLayout.module.scss'
-
-party.resolvableShapes['Logo'] = `<img src="${Logo}"/>`
 
 const links = [
   {

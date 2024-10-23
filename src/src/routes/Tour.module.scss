@@ -3,7 +3,7 @@
 .section {
   height: 100dvh;
   padding: 2rem 16px;
-  background-color: var(--color-primary);
+  background: var(--gradient-primary);
   color: var(--white);
   overflow: hidden;
   isolation: isolate;

@@ -46,6 +46,7 @@ export async function getUser(id) {
   return response.json()
 }
 
+
 export async function getCategory() {
   let requestOptions = {
     method: 'GET',

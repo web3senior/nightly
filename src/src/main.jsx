@@ -18,6 +18,8 @@ import Leaderboard from './routes/leaderboard.jsx'
 import Event from './routes/event.jsx'
 import Project from './routes/project.jsx'
 import ProjectDetail from './routes/project-detail.jsx'
+import User from './routes/user.jsx'
+import UserDetail from './routes/user-detail.jsx'
 import Ecosystem from './routes/ecosystem.jsx'
 // import Admin from './routes/admin.jsx'
 import Fee from './routes/fee.jsx'
@@ -77,6 +79,19 @@ const router = createBrowserRouter([
           {
             path: `:id`,
             element: <ProjectDetail />
+          }
+        ]
+      },
+      {
+        path: `user`,
+        children: [
+          {
+            index: true,
+            element: <User title={`Expert`} />,
+          },
+          {
+            path: `:id`,
+            element: <UserDetail />
           }
         ]
       },
