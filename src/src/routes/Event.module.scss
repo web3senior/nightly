@@ -20,6 +20,9 @@
 .datalist {
   &__item {
     figure {
+      background-color: var(--global-background-color);
+      border-radius: 999px;
+
       img {
         width: 64px;
         height: auto;
@@ -29,10 +32,14 @@
     a {
       background-color: var(--global-background-color);
       border-radius: var(--global-border-radius);
-      padding: 1em 1.5em;
+      padding: .8em 1em;
       transition: all ease-in-out 0.1s;  
       font-weight: 600;
-      font-size: 16px;  
+      font-size: 16px;
+
+      span {
+        font-size: 18px;
+      }
 
       &:active {
         transform: scale(0.95);

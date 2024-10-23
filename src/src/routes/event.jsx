@@ -37,26 +37,25 @@ export default function Owned({ title }) {
   return (
     <section className={styles.section}>
       <div className={`${styles['container']} __container ms-motion-slideUpIn`} data-width={`large`}>
-
         <Link to={`/search`} className={`${styles.pageTitle} d-flex align-items-center`}>
           <Icon name={`arrow_back_ios`} />
           <span>{title}</span>
         </Link>
 
         {data && data.event && data.event.length > 0 && (
-          <div className={`${styles['datalist']} grid grid--fit`} style={{'--data-width': `400px`, gap: `1rem`}}>
+          <div className={`${styles['datalist']} grid grid--fit`} style={{ '--data-width': `400px`, gap: `1rem` }}>
             {data.event.map((item, i) => {
               console.log(item)
               return (
                 <div key={i} className={`${styles['datalist__item']} card w-100 mt-10`}>
                   <div className={`card__body d-flex flex-row align-items-start justify-content-start`} style={{ columnGap: `2rem` }}>
-                    <figure>
+                    <figure className={`ms-depth-4`}>
                       <img alt={`Tour-${item.title}`} src={`${import.meta.env.VITE_UPLOAD_URL}${item.logo}`} />
                     </figure>
 
                     <div className={`d-flex flex-column align-items-start justify-content-start flex-1`}>
                       <h3>{item.title}</h3>
-                      
+
                       <p className={`text-balance`} style={{ color: `var(--black-200)` }}>
                         {item.lead}
                       </p>
@@ -75,8 +74,8 @@ export default function Owned({ title }) {
                         </li>
                       </ul>
 
-                      <a href={item.event_link} className={`mt-30 d-flex`} target={`_blank`}>
-                        View full info
+                      <a href={item.event_link} className={`mt-30 d-flex align-items-center`} target={`_blank`}>
+                        View
                         <Icon name={`open_in_new`} />
                       </a>
                     </div>
@@ -86,7 +85,6 @@ export default function Owned({ title }) {
             })}
           </div>
         )}
-
       </div>
     </section>
   )
