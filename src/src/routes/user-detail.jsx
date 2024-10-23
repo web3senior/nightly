@@ -54,7 +54,6 @@ export default function Owned({ title }) {
       setBackupData({ project: res })
     })
 
-    
     getCategory().then((res) => {
       console.log(res)
       setCategory(res)
@@ -80,9 +79,15 @@ export default function Owned({ title }) {
                   </small>
 
                   <ul className={`${styles.action} d-flex`}>
-                  <li><b>2</b>&nbsp;projects</li>
-                  <li><b>2</b>&nbsp;followers</li>
-                  <li><b>2</b>&nbsp;following</li>
+                    <li>
+                      <b>{project && project.project && project.project.length}</b>&nbsp;projects
+                    </li>
+                    <li>
+                      <b>2</b>&nbsp;followers
+                    </li>
+                    <li>
+                      <b>2</b>&nbsp;following
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -91,35 +96,35 @@ export default function Owned({ title }) {
         )}
 
         <div className={`mt-20`}>
-        <b>Projects</b>
+          <b>Projects</b>
 
-        {project && project.project && project.project.length > 0 && (
-          <div className={`${styles['datalist']}`}>
-            {project.project.map((item, i) => {
-              return (
-                <div key={i} className={`card mt-10`}>
-                  <div className={`card__body d-flex flex-row align-items-center justify-content-between`}>
-                    <ul className={`d-flex flex-column`}>
-                      <li>
-                        <b>{item.title}</b>
-                      </li>
-                      <li className={``} style={{ color: `var(--black-100)` }}>
-                        {item.lead}
-                      </li>
-                      {category && category.length > 0 && (
+          {project && project.project && project.project.length > 0 && (
+            <div className={`${styles['datalist']}`}>
+              {project.project.map((item, i) => {
+                return (
+                  <div key={i} className={`card mt-10`}>
+                    <div className={`card__body d-flex flex-row align-items-center justify-content-between`}>
+                      <ul className={`d-flex flex-column`}>
                         <li>
-                          <span className={`badge badge-pill badge-warning`}>{category.filter((filteredItem, i) => filteredItem.id === item.category_id)[0].name}</span>
+                          <b>{item.title}</b>
                         </li>
-                      )}
-                    </ul>
+                        <li className={``} style={{ color: `var(--black-100)` }}>
+                          {item.lead}
+                        </li>
+                        {category && category.length > 0 && (
+                          <li>
+                            <span className={`badge badge-pill badge-warning`}>{category.filter((filteredItem, i) => filteredItem.id === item.category_id)[0].name}</span>
+                          </li>
+                        )}
+                      </ul>
 
-                    <Link to={`/project/${item.id}`}>View</Link>
+                      <Link to={`/project/${item.id}`}>View</Link>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
-          </div>
-        )}
+                )
+              })}
+            </div>
+          )}
         </div>
       </div>
     </section>
